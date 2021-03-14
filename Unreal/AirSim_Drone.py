@@ -17,11 +17,7 @@ extension = '.csv'
 os.chdir(dataset_path)
 result = glob.glob('*{}'.format(extension))
 
-last_file_idx = result[len(result)-1]
-last_file_idx = last_file_idx.replace(name_prefix, '')
-last_file_idx = last_file_idx.replace(extension, '')
-
-new_dataset_idx = int(last_file_idx)+1
+new_dataset_idx = len(result)
 print("Dataset NO " + str(new_dataset_idx))
 
 new_dataset_images_directory = dataset_path + name_prefix + str(new_dataset_idx)
